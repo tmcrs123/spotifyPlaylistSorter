@@ -24,7 +24,7 @@ import java.util.Set;
 public class PlaylistService {
 
 
-    HashMap<String, Playlist> playlistHashMap = new HashMap<>();
+    static HashMap<String, Playlist> playlistHashMap = new HashMap<>();
     HashMap<Genres, ArrayList<String>> tempSongContainer = new HashMap<>();
 
 
@@ -89,9 +89,9 @@ public class PlaylistService {
 
             for (String uri : iteratableGenreArrayList) {
 
-                //if the current uri is the last, then add close the array and end the JSON
-                System.out.println("last index is : " + iteratableGenreArrayList.lastIndexOf(uri));
-                System.out.println("size of the array list is: " + iteratableGenreArrayList.size());
+                //if the current uri is the last, then add it, close the array and end the JSON
+//                System.out.println("last index is : " + iteratableGenreArrayList.lastIndexOf(uri));
+//                System.out.println("size of the array list is: " + iteratableGenreArrayList.size());
 
 
                 if (iteratableGenreArrayList.lastIndexOf(uri) == iteratableGenreArrayList.size()-1) {
@@ -102,10 +102,10 @@ public class PlaylistService {
                 }
             }
 
-            System.out.println("This is how the String builder looks like: " + stringBuilder.toString());
+//            System.out.println("This is how the String builder looks like: " + stringBuilder.toString());
 
             String playlist_id = playlistHashMap.get(genre.toString()).getId();
-            System.out.println("Playlist id is: " + playlist_id);
+//            System.out.println("Playlist id is: " + playlist_id);
 
             URL url = new URL("https://api.spotify.com/v1/users/" + userId + "/playlists/"+playlist_id+"/tracks?uris="+stringBuilder.toString());
             HttpURLConnection connection;

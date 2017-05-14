@@ -1,6 +1,7 @@
 package fullModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 
 /**
  * Created by tiagoRodrigues on 18/04/2017.
@@ -41,12 +42,16 @@ public class Artist {
 
         StringBuilder stringBuilder = new StringBuilder();
 
+        System.out.println("printing genres...");
+
         for (int i = 0; i < getGenres().length; i++) {
 
-            stringBuilder.append(genres[i]+", ");
+
+            stringBuilder.append(genres[i]).append(", ");
 
         }
 
+        System.out.println("This artist has the following genres : " + stringBuilder.toString());
         return stringBuilder.toString();
     }
 }

@@ -20,6 +20,15 @@ import java.util.concurrent.ExecutionException;
  */
 public class Main {
 
+    /*
+    * todo: Features
+    * Check for duplicates
+    * Create playlist for artist based on the songs I have from them on my library
+    * Limit the number of URI's that can go in the ulr query
+    * Draw 20 feature
+    *
+    * */
+
     public static void main(String[] args) {
 
         AuthService authService = new AuthService();
@@ -27,6 +36,7 @@ public class Main {
         SongLibraryService songLibraryService = new SongLibraryService();
         PlaylistService playlistService = new PlaylistService();
         SongAnalyzerService songAnalyzerService = new SongAnalyzerService();
+        ArtistService artistService = new ArtistService();
 
         String firstRequestURL = "https://api.spotify.com/v1/me/tracks";
 
@@ -58,36 +68,62 @@ public class Main {
             playlistHashMap = playlistService.getPlaylists(userService.getUser().getId());
 
 
+
+            //WHILE STARTS HERE
+
             /*
             * Get the first songs in the library
             * */
             songLibraryService.getSongSet(firstRequestURL);
 
+
             SongLibrary firstSetofSongs = songLibraryService.songLibrary;
+
 
             Track firstTrack = firstSetofSongs.getItems()[0].getTrack();
 
-            System.out.println(firstTrack.getName());
+            System.out.println("Track name is: " + firstTrack.getName());
 
             System.out.println("track id : " + firstTrack.getId());
 
+            artistService.getGenresforArtist(firstTrack.getArtists()[0]);
+
+
+
+            /**
+             * Set the genre of the track
+             * */
             firstTrack.setGenre(songAnalyzerService.trackGenreAnalyzer(firstTrack));
 
-            System.out.println(firstTrack.getGenre());
+            System.out.println("I've set my genre definition to " + firstTrack.getGenre());
+
+            /*
+            * Add it to the temp song container
+            * */
 
             playlistService.addTrackToContainer(firstTrack.getGenre() , firstTrack);
 
-            ArrayList<String> unspecifiedURI = playlistService.getTempSongContainer().get(Genres.UNSPECIFIED);
+
+            /*
+            * Get all the tracks from a given genre
+            * */
+//            for (int i = 0; i < genres.length; i++){
+//
+//
+//                ArrayList<String> genresURI = playlistService.getTempSongContainer().get(genres[i]);
+//
+//
+//            }
 
 
-            System.out.println("Size is " + unspecifiedURI.size());
 
-            for (String uri : unspecifiedURI){
-
-                System.out.println(uri);
-            }
+            /*
+            * Add it to the corresponding playlist
+            * */
 
             playlistService.addTrackToPlaylist(userService.getUser().getId(),playlistService.getPlaylists(userService.getUser().getId()));
+
+
 
 
 
