@@ -1,18 +1,21 @@
 package fullModel.Tests;
 
 import Services.*;
-import fullModel.Item;
-import fullModel.Playlist;
-import fullModel.SongLibrary;
-import fullModel.Track;
+import fullModel.*;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.DateTimeParser;
 
 import java.io.IOException;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -40,11 +43,17 @@ public class Main {
 
         String firstRequestURL = "https://api.spotify.com/v1/me/tracks";
 
+
         HashMap<String, Playlist> playlistHashMap;
 
-        ZoneId zoneId = ZoneId.of("UTC");
+        //Helpers
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date lastRunDate = df.parse("2017-05-26");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
-        String teste = ZonedDateTime.of(2017, 4, 1, 0, 0, 0, 0, zoneId).format(DateTimeFormatter.ISO_INSTANT);
 
         //todo: pode haver aqui um check para ver se a data é válida
 
@@ -69,105 +78,72 @@ public class Main {
 
 
 
-            //WHILE STARTS HERE
-
             /*
-            * Get the first songs in the library
+            *Start populating the Song Library with items. Executing getSongSet with
+            * first request url triggers that
             * */
+
             songLibraryService.getSongSet(firstRequestURL);
 
 
-            SongLibrary firstSetofSongs = songLibraryService.songLibrary;
 
-
-            Track firstTrack = firstSetofSongs.getItems()[0].getTrack();
-
-            System.out.println("Track name is: " + firstTrack.getName());
-
-            System.out.println("track id : " + firstTrack.getId());
-
-            artistService.getGenresforArtist(firstTrack.getArtists()[0]);
-
-
-
-            /**
-             * Set the genre of the track
-             * */
-            firstTrack.setGenre(songAnalyzerService.trackGenreAnalyzer(firstTrack));
-
-            System.out.println("I've set my genre definition to " + firstTrack.getGenre());
 
             /*
-            * Add it to the temp song container
+            * start doing stuff until there aren't no more references to the next song set
             * */
-
-            playlistService.addTrackToContainer(firstTrack.getGenre() , firstTrack);
-
-
-            /*
-            * Get all the tracks from a given genre
-            * */
-//            for (int i = 0; i < genres.length; i++){
-//
-//
-//                ArrayList<String> genresURI = playlistService.getTempSongContainer().get(genres[i]);
-//
-//
-//            }
+            while (songLibraryService.songLibrary.getNext() != null) {
 
 
+                SongLibrary curSongSet = songLibraryService.songLibrary;
 
-            /*
-            * Add it to the corresponding playlist
-            * */
+                Item[] curItemSet = curSongSet.getItems();
 
-            playlistService.addTrackToPlaylist(userService.getUser().getId(),playlistService.getPlaylists(userService.getUser().getId()));
+                List<Track> tracks = new ArrayList<>();
+
+                /*
+                * For each track in the array of items, do stuff
+                * */
+
+                for (Item item : curItemSet) {
+
+                    //get the track from the item
+                    Track curTrack = item.getTrack();
+
+                    try {
+                        //get the date the track was added from the item
+                        Date curTrackAddedDate = parseDate(item.getAdded_at());
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    //get the FIRST artist for the current track
+                    Artist curArtist = item.getTrack().getArtists()[0];
+
+                    //get the genres for that artist
+                    artistService.getGenresforArtist(curArtist);
+
+                    //set the genre of the current track
+                    curTrack.setGenre(songAnalyzerService.trackGenreAnalyzer(curTrack));
 
 
+                    //added the current track to the temp container of tracks
+                    playlistService.addTrackToContainer(curTrack.getGenre(), curTrack);
 
 
+                    /*
+                    * Now set the reference of songLibrary to the next song library set
+                    * */
+
+//                    songLibraryService.getSongSet(curSongSet.getNext());
 
 
+                }
 
-
-
-
-
-
-
-            //todo:I got the first song set here but need to process it
-
-
-
-
-            /*
-            * while there are more songs get them*/
-//            while (songLibraryService.songLibrary.getNext() != null) {
-//                songLibraryService.getSongSet(songLibraryService.songLibrary.getNext());
-//
-//                for (Item item : songLibraryService.songLibrary.getItems()) {
-//
-//                    item.getTrack().setGenre(songAnalyzerService.trackGenreAnalyzer(item.getTrack()));
-//                    playlistService.addTrackToContainer(item.getTrack().getGenre(),item.getTrack());
-//
-//                    playlistService.addTrackToPlaylist(userService.getUser().getId(),playlistHashMap);
-//
-//
-//
-//                /*
-//                * <0 a musica foi adicionada ANTES da data definida
-//                * >0 a musica foi adicionada DEPOIS da data
-//                * */
-////                    if (item.getAdded_at().compareTo(teste) > 0) {
-////                        System.out.println("Processing songs...");
-////
-////                    } else {
-////                        System.out.println("No more songs to process");
-////                        return;
-////                    }
-//                }
-//            }
-
+/*
+* Can I run this method in the end when all tracks have a defined genre???
+* */
+                    playlistService.addTrackToPlaylist(userService.getUser().getId(), playlistService.getPlaylists(userService.getUser().getId()));
+            }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -176,6 +152,17 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    static Date parseDate(String stringDate) throws ParseException {
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        String[] splitDate = stringDate.split("T");
+
+        Date date = dateFormat.parse(splitDate[0]);
+
+        return date;
 
     }
 }

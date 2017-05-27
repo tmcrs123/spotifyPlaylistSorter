@@ -156,6 +156,8 @@ public class SongAnalyzerService {
         * If the genre is hip hop I need to return it differently because of spaces in enum
         * */
 
+        //regex here %hip hop% ?
+
         if (maxValueCounter.getGenreName().equals("Hip Hop")) {
 
             System.out.println("Got here");
