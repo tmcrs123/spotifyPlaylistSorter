@@ -134,15 +134,18 @@ public class Main {
                     * Now set the reference of songLibrary to the next song library set
                     * */
 
-//                    songLibraryService.getSongSet(curSongSet.getNext());
-
 
                 }
-
 /*
 * Can I run this method in the end when all tracks have a defined genre???
 * */
-                    playlistService.addTrackToPlaylist(userService.getUser().getId(), playlistService.getPlaylists(userService.getUser().getId()));
+                playlistService.addTrackToPlaylist(userService.getUser().getId(), playlistService.getPlaylists(userService.getUser().getId()));
+
+                playlistService.purgeTempSongContainer();
+
+                songLibraryService.getSongSet(curSongSet.getNext());
+
+                Thread.sleep(1000);
             }
 
         } catch (InterruptedException e) {

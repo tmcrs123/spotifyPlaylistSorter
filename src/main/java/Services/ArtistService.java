@@ -27,6 +27,7 @@ public class ArtistService {
         connection.setRequestProperty("Authorization", "Bearer " + AuthService.accessToken.getAccessToken());
         connection.connect();
 
+
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
         String inputLine;

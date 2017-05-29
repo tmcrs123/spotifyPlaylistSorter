@@ -100,8 +100,13 @@ public class PlaylistService {
                 } else {
                     stringBuilder.append(uri + ",");
                 }
+
+
             }
 
+            if (stringBuilder.toString().equals("")){
+                continue;
+            }
 //            System.out.println("This is how the String builder looks like: " + stringBuilder.toString());
 
             String playlist_id = playlistHashMap.get(genre.toString()).getId();
@@ -128,7 +133,7 @@ public class PlaylistService {
             System.out.println(connection.getResponseMessage());
             System.out.println(connection.getResponseCode());
 
-
+            System.out.println(connection.getHeaderField("Retry-After"));
             //flush the string builder
             stringBuilder.delete(0,stringBuilder.length());
 
@@ -155,5 +160,15 @@ public class PlaylistService {
 
     public void setTempSongContainer(HashMap<Genres, ArrayList<String>> tempSongContainer) {
         this.tempSongContainer = tempSongContainer;
+    }
+
+    public void purgeTempSongContainer(){
+
+        for (ArrayList<String> song: tempSongContainer.values()){
+
+            song.clear();
+
+        }
+
     }
 }
