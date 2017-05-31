@@ -7,6 +7,7 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.DateTimeParser;
 
+import javax.swing.text.StyledEditorKit;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -32,7 +33,7 @@ public class Main {
     *
     * */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
         AuthService authService = new AuthService();
         UserService userService = new UserService();
@@ -40,6 +41,7 @@ public class Main {
         PlaylistService playlistService = new PlaylistService();
         SongAnalyzerService songAnalyzerService = new SongAnalyzerService();
         ArtistService artistService = new ArtistService();
+        int counter = 0;
 
         String firstRequestURL = "https://api.spotify.com/v1/me/tracks";
 
@@ -48,11 +50,8 @@ public class Main {
 
         //Helpers
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            Date lastRunDate = df.parse("2017-05-26");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        Date lastRunDate = df.parse("2017-05-29");
+        boolean noMoreSongsToAdd = false;
 
 
         //todo: pode haver aqui um check para ver se a data é válida
@@ -91,12 +90,14 @@ public class Main {
             /*
             * start doing stuff until there aren't no more references to the next song set
             * */
-            while (songLibraryService.songLibrary.getNext() != null) {
+            while (songLibraryService.songLibrary.getNext() != null && counter != songLibraryService.songLibrary.total) {
 
 
                 SongLibrary curSongSet = songLibraryService.songLibrary;
 
+
                 Item[] curItemSet = curSongSet.getItems();
+
 
                 List<Track> tracks = new ArrayList<>();
 
@@ -106,15 +107,24 @@ public class Main {
 
                 for (Item item : curItemSet) {
 
+                    counter++;
+
+                    //comment out this bit to add all library songs
+//                    if (!isCurrentDateAfterLastRunDate(lastRunDate, item.getAdded_at())) {
+//                        noMoreSongsToAdd = true;
+//                        break;
+//                    }
+
                     //get the track from the item
                     Track curTrack = item.getTrack();
 
-                    try {
-                        //get the date the track was added from the item
-                        Date curTrackAddedDate = parseDate(item.getAdded_at());
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
+
+//                    try {
+//                        //get the date the track was added from the item
+//                        Date curTrackAddedDate = parseDate(item.getAdded_at());
+//                    } catch (ParseException e) {
+//                        e.printStackTrace();
+//                    }
 
                     //get the FIRST artist for the current track
                     Artist curArtist = item.getTrack().getArtists()[0];
@@ -127,19 +137,24 @@ public class Main {
 
 
                     //added the current track to the temp container of tracks
-                    playlistService.addTrackToContainer(curTrack.getGenre(), curTrack);
 
+                    playlistService.addTrackToContainer(curTrack.getGenre(), curTrack);
 
                     /*
                     * Now set the reference of songLibrary to the next song library set
                     * */
-
-
                 }
 /*
 * Can I run this method in the end when all tracks have a defined genre???
 * */
+
                 playlistService.addTrackToPlaylist(userService.getUser().getId(), playlistService.getPlaylists(userService.getUser().getId()));
+
+                //comment out this bit to add all library songs to correct playlist
+//                if (noMoreSongsToAdd) {
+//                    System.out.println("All songs after last run date added");
+//                    return;
+//                }
 
                 playlistService.purgeTempSongContainer();
 
@@ -157,15 +172,33 @@ public class Main {
         }
     }
 
-    static Date parseDate(String stringDate) throws ParseException {
+    static Date parseDate(String spotifyDate) throws ParseException {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-        String[] splitDate = stringDate.split("T");
+        String[] splitDate = spotifyDate.split("T");
 
         Date date = dateFormat.parse(splitDate[0]);
 
         return date;
 
+    }
+
+    static boolean isCurrentDateAfterLastRunDate(Date lastRunDate, String trackAddedDate) {
+
+        boolean isAfterRunDate = false;
+
+        try {
+            Date dateAdded = parseDate(trackAddedDate);
+
+            if (dateAdded.after(lastRunDate)) {
+                isAfterRunDate = true;
+            }
+
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return isAfterRunDate;
     }
 }
