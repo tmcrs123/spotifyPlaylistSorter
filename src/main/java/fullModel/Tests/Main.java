@@ -90,8 +90,14 @@ public class Main {
             /*
             * start doing stuff until there aren't no more references to the next song set
             * */
-            while (songLibraryService.songLibrary.getNext() != null && counter != songLibraryService.songLibrary.total) {
+//            while (songLibraryService.songLibrary.getNext() != null && counter != songLibraryService.songLibrary.total) {
 
+        do{
+
+//            if (songLibraryService.songLibrary.getNext() == null){
+//                System.out.println("All songs processed");
+//                return;
+//            }
 
                 SongLibrary curSongSet = songLibraryService.songLibrary;
 
@@ -158,10 +164,16 @@ public class Main {
 
                 playlistService.purgeTempSongContainer();
 
+                if (songLibraryService.songLibrary.getNext() == null){
+                    System.out.println("All songs processed. Exiting...");
+                    return;
+                }
+
                 songLibraryService.getSongSet(curSongSet.getNext());
 
                 Thread.sleep(1000);
-            }
+
+            } while (songLibraryService.songLibrary.getItems().length != 0);
 
         } catch (InterruptedException e) {
             e.printStackTrace();
