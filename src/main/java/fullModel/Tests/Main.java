@@ -41,7 +41,6 @@ public class Main {
         PlaylistService playlistService = new PlaylistService();
         SongAnalyzerService songAnalyzerService = new SongAnalyzerService();
         ArtistService artistService = new ArtistService();
-        int counter = 0;
 
         String firstRequestURL = "https://api.spotify.com/v1/me/tracks";
 
@@ -113,7 +112,6 @@ public class Main {
 
                 for (Item item : curItemSet) {
 
-                    counter++;
 
                     //comment out this bit to add all library songs
 //                    if (!isCurrentDateAfterLastRunDate(lastRunDate, item.getAdded_at())) {

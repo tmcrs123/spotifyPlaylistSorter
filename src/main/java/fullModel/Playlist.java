@@ -1,9 +1,6 @@
 package fullModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
-
-import java.util.HashMap;
 
 /**
  * Created by tiagoRodrigues on 21/04/2017.
@@ -14,6 +11,7 @@ public class Playlist {
 
     String id;
     String name;
+    int numberOfsongs;
 
 
     public String getId() {
@@ -30,5 +28,13 @@ public class Playlist {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getNumberOfSongs(){
+        return numberOfsongs;
+    }
+
+    public void setNumberOfsongs(int nSongs){
+        numberOfsongs = nSongs;
     }
 }

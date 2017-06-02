@@ -13,6 +13,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -72,7 +73,7 @@ public class PlaylistService {
 
     }
 
-    public void addTrackToPlaylist(String userId,HashMap<String,Playlist> playlistHashMap) throws IOException {
+    public void addTrackToPlaylist(String userId, HashMap<String, Playlist> playlistHashMap) throws IOException {
 
 
         //do all the stuff related to building the add to playlist request
@@ -94,7 +95,7 @@ public class PlaylistService {
 //                System.out.println("size of the array list is: " + iteratableGenreArrayList.size());
 
 
-                if (iteratableGenreArrayList.lastIndexOf(uri) == iteratableGenreArrayList.size()-1) {
+                if (iteratableGenreArrayList.lastIndexOf(uri) == iteratableGenreArrayList.size() - 1) {
                     stringBuilder.append(uri);
 
                 } else {
@@ -104,7 +105,7 @@ public class PlaylistService {
 
             }
 
-            if (stringBuilder.toString().equals("")){
+            if (stringBuilder.toString().equals("")) {
                 continue;
             }
 //            System.out.println("This is how the String builder looks like: " + stringBuilder.toString());
@@ -112,14 +113,14 @@ public class PlaylistService {
             String playlist_id = playlistHashMap.get(genre.toString()).getId();
 //            System.out.println("Playlist id is: " + playlist_id);
 
-            URL url = new URL("https://api.spotify.com/v1/users/" + userId + "/playlists/"+playlist_id+"/tracks?uris="+stringBuilder.toString());
+            URL url = new URL("https://api.spotify.com/v1/users/" + userId + "/playlists/" + playlist_id + "/tracks?uris=" + stringBuilder.toString());
             HttpURLConnection connection;
             System.out.println("url is :" + url);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("Host","api.spotify.com");
-            connection.setRequestProperty("Content-Length","0");
-            connection.setRequestProperty("Accept-Encoding","gzip, deflate, compress");
+            connection.setRequestProperty("Host", "api.spotify.com");
+            connection.setRequestProperty("Content-Length", "0");
+            connection.setRequestProperty("Accept-Encoding", "gzip, deflate, compress");
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("User-Agent", "Spotify API Console v0.1");
             connection.setRequestProperty("Content-Type", "application/json");
@@ -134,10 +135,43 @@ public class PlaylistService {
 
             System.out.println(connection.getHeaderField("Retry-After"));
             //flush the string builder
-            stringBuilder.delete(0,stringBuilder.length());
+            stringBuilder.delete(0, stringBuilder.length());
 
         }
 
+
+    }
+
+
+    public void addTrackToOfflinePlaylist(String userId, HashMap<String, Playlist> playlistHashMap) {
+
+        for (Playlist playlist : playlistHashMap.values()) {
+
+            URL url = null;
+            try {
+                url = new URL("https://api.spotify.com/v1/users/" + userId + "/playlists/" + playlist.getId() + "/tracks?uris=" + playlistHashMap.get(playlist.getName()));
+                HttpURLConnection connection;
+                System.out.println("url is :" + url);
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setRequestProperty("Host", "api.spotify.com");
+                connection.setRequestProperty("Content-Length", "0");
+                connection.setRequestProperty("Accept-Encoding", "gzip, deflate, compress");
+                connection.setRequestProperty("Accept", "application/json");
+                connection.setRequestProperty("User-Agent", "Spotify API Console v0.1");
+                connection.setRequestProperty("Content-Type", "application/json");
+                connection.setRequestProperty("Authorization", "Bearer " + AuthService.accessToken.getAccessToken());
+                connection.connect();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println("All songs added to offline playlist");
 
     }
 
@@ -161,9 +195,9 @@ public class PlaylistService {
         this.tempSongContainer = tempSongContainer;
     }
 
-    public void purgeTempSongContainer(){
+    public void purgeTempSongContainer() {
 
-        for (ArrayList<String> song: tempSongContainer.values()){
+        for (ArrayList<String> song : tempSongContainer.values()) {
 
             song.clear();
 
