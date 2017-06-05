@@ -2,6 +2,7 @@ package fullModel.Tests;
 
 import Services.*;
 import fullModel.Playlist;
+import fullModel.Track;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -47,13 +48,22 @@ public class TempPlaylistBuilder {
 
             for (Playlist playlist : playlistHashMap.values()) {
 
+                System.out.println(playlist.getTracks().getTotal());
+
 
                 //get the name of the playlist, need to added it to the offline playlists
                 String playlistName = playlist.getName();
 
+
                 //get the id of the playlists
 
                 String  playlistId = playlist.getId();
+
+
+
+                playlistService.getRandomPlaylistTrack(playlist,userService.getUser().getId());
+
+
 
                 //get the number of songs in playlist
 
@@ -66,7 +76,7 @@ public class TempPlaylistBuilder {
                 //add it to the corresponding playlist
 
 
-                playlistService.addTrackToPlaylist(userService.getUser().getId(), playlistService.getPlaylists(userService.getUser().getId()));
+//                playlistService.addTrackToPlaylist(userService.getUser().getId(), playlistService.getPlaylists(userService.getUser().getId()));
 
             }
 

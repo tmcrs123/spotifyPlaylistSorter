@@ -1,16 +1,15 @@
 package Services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 import fullModel.Playlist;
 import fullModel.PlaylistLibrary;
 import fullModel.Tests.Genres;
 import fullModel.Track;
+import fullModel.auxModels.SingleTrack;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
@@ -201,6 +200,56 @@ public class PlaylistService {
 
             song.clear();
 
+        }
+
+    }
+
+    public void getRandomPlaylistTrack(Playlist playlist, String userId) {
+
+//        GET https://api.spotify.com/v1/users/{user_id}/playlists/{playlist_id}/tracks
+
+        System.out.println("playlist is " + playlist.getName());
+        System.out.println("playlist has" + playlist.getTracks().getTotal() + " tracks");
+        int randomTrackIndex = ((int)Math.round(Math.random()*playlist.getTracks().getTotal()));
+        System.out.println("picking up song number" + randomTrackIndex);
+
+        try {
+            URL url = new URL("https://api.spotify.com/v1/users/" + userId + "/playlists/" + playlist.getId() + "/tracks?limit=1&offset=" + randomTrackIndex);
+            HttpURLConnection connection;
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Host", "api.spotify.com");
+            connection.setRequestProperty("Content-Length", "0");
+            connection.setRequestProperty("Accept-Encoding", "identity");
+            connection.setRequestProperty("Accept", "application/json");
+            connection.setRequestProperty("User-Agent", "Spotify API Console v0.1");
+            connection.setRequestProperty("Content-Type", "application/json");
+
+            connection.setRequestProperty("Authorization", "Bearer " + AuthService.accessToken.getAccessToken());
+            connection.connect();
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+            String inputLine;
+
+            StringBuilder response = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            SingleTrack curRandomTrack = objectMapper.readValue(response.toString(), SingleTrack.class);
+
+            System.out.println("got a random track named " + curRandomTrack.getItems()[0].getTrack().getName());
+
+
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
     }

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 /**
  * Created by tiagoRodrigues on 18/04/2017.
  */
-@JsonIgnoreProperties({"href","limit","next","offset","previous","total"})
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Item {
 
     String added_at;

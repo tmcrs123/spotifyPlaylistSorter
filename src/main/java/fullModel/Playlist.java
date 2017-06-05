@@ -1,6 +1,10 @@
 package fullModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import fullModel.auxModels.Tracks;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by tiagoRodrigues on 21/04/2017.
@@ -11,8 +15,7 @@ public class Playlist {
 
     String id;
     String name;
-    int numberOfsongs;
-
+    Tracks tracks;
 
     public String getId() {
         return id;
@@ -30,11 +33,11 @@ public class Playlist {
         this.name = name;
     }
 
-    public int getNumberOfSongs(){
-        return numberOfsongs;
+    public Tracks getTracks() {
+        return tracks;
     }
 
-    public void setNumberOfsongs(int nSongs){
-        numberOfsongs = nSongs;
+    public void setTracks(Tracks tracks) {
+        this.tracks = tracks;
     }
 }
