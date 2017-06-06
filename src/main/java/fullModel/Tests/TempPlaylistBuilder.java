@@ -5,8 +5,10 @@ import fullModel.Playlist;
 import fullModel.Track;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
+import java.util.stream.Stream;
 
 /**
  * Created by tiagoRodrigues on 02/06/2017.
@@ -48,8 +50,13 @@ public class TempPlaylistBuilder {
 
             for (Playlist playlist : playlistHashMap.values()) {
 
-                System.out.println(playlist.getTracks().getTotal());
+                //A neat way of checking if a playlists matches a genre!
 
+                boolean isPersonalPlaylist = Arrays.stream(Genres.values()).filter(x -> x.toString().equals(playlist.getName())).count() > 0;
+
+                if (!isPersonalPlaylist) {
+                    continue;
+                }
 
                 //get the name of the playlist, need to added it to the offline playlists
                 String playlistName = playlist.getName();
@@ -57,23 +64,15 @@ public class TempPlaylistBuilder {
 
                 //get the id of the playlists
 
-                String  playlistId = playlist.getId();
+                String playlistId = playlist.getId();
 
 
+                for (int i = 0; i < numberOfSongsInPlaylist; i++) {
+                    Track curTrack = playlistService.getRandomPlaylistTrack(playlist, userService.getUser().getId());
+                    //add this song to some sort of map
+                }
 
-                playlistService.getRandomPlaylistTrack(playlist,userService.getUser().getId());
-
-
-
-                //get the number of songs in playlist
-
-
-                //get the id of the track at random position x
-                //append it to a string builder
-
-                StringBuilder stringBuilder = new StringBuilder();
-
-                //add it to the corresponding playlist
+                //call the method below to add all songs to playlist at once
 
 
 //                playlistService.addTrackToPlaylist(userService.getUser().getId(), playlistService.getPlaylists(userService.getUser().getId()));

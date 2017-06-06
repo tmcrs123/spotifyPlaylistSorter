@@ -1,6 +1,7 @@
 package fullModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import fullModel.auxModels.Owner;
 import fullModel.auxModels.Tracks;
 
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ public class Playlist {
     String id;
     String name;
     Tracks tracks;
+    Owner owner;
+
 
     public String getId() {
         return id;
@@ -39,5 +42,13 @@ public class Playlist {
 
     public void setTracks(Tracks tracks) {
         this.tracks = tracks;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 }

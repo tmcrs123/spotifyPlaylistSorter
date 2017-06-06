@@ -142,13 +142,15 @@ public class PlaylistService {
     }
 
 
-    public void addTrackToOfflinePlaylist(String userId, HashMap<String, Playlist> playlistHashMap) {
+    public void addTrackToOfflinePlaylist(Track track, String playlistToAddTrackTo) {
 
-        for (Playlist playlist : playlistHashMap.values()) {
+
 
             URL url = null;
             try {
-                url = new URL("https://api.spotify.com/v1/users/" + userId + "/playlists/" + playlist.getId() + "/tracks?uris=" + playlistHashMap.get(playlist.getName()));
+//                POST https://api.spotify.com/v1/users/{user_id}/playlists/{playlist_id}/tracks
+
+                url = new URL("CHANGE THIS URL");
                 HttpURLConnection connection;
                 System.out.println("url is :" + url);
                 connection = (HttpURLConnection) url.openConnection();
@@ -168,9 +170,9 @@ public class PlaylistService {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+        
 
-        System.out.println("All songs added to offline playlist");
+
 
     }
 
@@ -204,18 +206,31 @@ public class PlaylistService {
 
     }
 
-    public void getRandomPlaylistTrack(Playlist playlist, String userId) {
+    public Track getRandomPlaylistTrack(Playlist playlist, String userId) {
 
 //        GET https://api.spotify.com/v1/users/{user_id}/playlists/{playlist_id}/tracks
 
         System.out.println("playlist is " + playlist.getName());
-        System.out.println("playlist has" + playlist.getTracks().getTotal() + " tracks");
-        int randomTrackIndex = ((int)Math.round(Math.random()*playlist.getTracks().getTotal()));
-        System.out.println("picking up song number" + randomTrackIndex);
+        System.out.println("playlist id is " + playlist.getId());
+        System.out.println("playlist has " + playlist.getTracks().getTotal() + " tracks");
+        System.out.println("playlists owner is " + playlist.getOwner().getId());
+        int randomTrackIndex = ((int)Math.floor(Math.random()*playlist.getTracks().getTotal()));
+        System.out.println("picking up song number " + randomTrackIndex);
+
+        String  playlistOwner;
+
+        if (playlist.getOwner().getId().equals("spotify")){
+          playlistOwner = "spotify";
+        } else{
+            playlistOwner = userId;
+        }
+
+        Track randomTrackToReturn = new Track();
 
         try {
-            URL url = new URL("https://api.spotify.com/v1/users/" + userId + "/playlists/" + playlist.getId() + "/tracks?limit=1&offset=" + randomTrackIndex);
+            URL url = new URL("https://api.spotify.com/v1/users/" + playlistOwner+ "/playlists/" + playlist.getId() + "/tracks?limit=1&offset=" + randomTrackIndex);
             HttpURLConnection connection;
+            System.out.println(url);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Host", "api.spotify.com");
@@ -243,6 +258,12 @@ public class PlaylistService {
 
             System.out.println("got a random track named " + curRandomTrack.getItems()[0].getTrack().getName());
 
+            randomTrackToReturn = curRandomTrack.getItems()[0].getTrack();
+
+
+            return randomTrackToReturn;
+
+
 
         } catch (ProtocolException e) {
             e.printStackTrace();
@@ -251,6 +272,7 @@ public class PlaylistService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        
+        return randomTrackToReturn;
     }
 }
