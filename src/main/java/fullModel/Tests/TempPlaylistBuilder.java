@@ -15,6 +15,8 @@ import java.util.stream.Stream;
  */
 public class TempPlaylistBuilder {
 
+    static HashMap<String, Playlist> playlistHashMap;
+
     public static void main(String[] args) {
 
         AuthService authService = new AuthService();
@@ -23,8 +25,8 @@ public class TempPlaylistBuilder {
         PlaylistService playlistService = new PlaylistService();
         SongAnalyzerService songAnalyzerService = new SongAnalyzerService();
 
-        int numberOfSongsInPlaylist = 20;
-        HashMap<String, Playlist> playlistHashMap;
+        int numberOfSongsInPlaylist = 10;
+
 
 
         String firstRequestURL = "https://api.spotify.com/v1/me/tracks";
@@ -48,11 +50,18 @@ public class TempPlaylistBuilder {
             playlistHashMap = playlistService.getPlaylists(userService.getUser().getId());
 
 
+
+            //stringBuider to save track URI's
+            StringBuilder stringBuilder = new StringBuilder();
+
+
             for (Playlist playlist : playlistHashMap.values()) {
 
                 //A neat way of checking if a playlists matches a genre!
 
                 boolean isPersonalPlaylist = Arrays.stream(Genres.values()).filter(x -> x.toString().equals(playlist.getName())).count() > 0;
+
+                System.out.println(playlist.getName() + " is personal? " + isPersonalPlaylist);
 
                 if (!isPersonalPlaylist) {
                     continue;
@@ -68,15 +77,28 @@ public class TempPlaylistBuilder {
 
 
                 for (int i = 0; i < numberOfSongsInPlaylist; i++) {
+
                     Track curTrack = playlistService.getRandomPlaylistTrack(playlist, userService.getUser().getId());
-                    //add this song to some sort of map
+
+                    Thread.sleep(1000);
+
+                    if (i == numberOfSongsInPlaylist - 1) {
+                        System.out.println("here");
+                        stringBuilder.append("spotify:track:" + curTrack.getId());
+                        String offlinePlaylistId = offlinePlaylistId(playlist.getName());
+                        playlistService.addTrackToOfflinePlaylist(userService.getUser().getId(), offlinePlaylistId, stringBuilder.toString());
+                        stringBuilder.delete(0, stringBuilder.length());
+                    } else {
+                        stringBuilder.append("spotify:track:" + curTrack.getId() + ",");
+                    }
+
+
                 }
 
                 //call the method below to add all songs to playlist at once
 
 
 //                playlistService.addTrackToPlaylist(userService.getUser().getId(), playlistService.getPlaylists(userService.getUser().getId()));
-
             }
 
 
@@ -87,6 +109,13 @@ public class TempPlaylistBuilder {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static String offlinePlaylistId(String playlistName){
+
+        String offlinePlaylistName = "Offline"+playlistName;
+        return playlistHashMap.get(offlinePlaylistName).getId();
+
     }
 
 }

@@ -31,7 +31,7 @@ public class PlaylistService {
     public HashMap<String, Playlist> getPlaylists(String userId) throws IOException {
 
 
-        URL url = new URL("https://api.spotify.com/v1/users/" + userId + "/playlists");
+        URL url = new URL("https://api.spotify.com/v1/users/" + userId + "/playlists?limit=50");
         HttpURLConnection connection;
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
@@ -142,15 +142,14 @@ public class PlaylistService {
     }
 
 
-    public void addTrackToOfflinePlaylist(Track track, String playlistToAddTrackTo) {
-
-
+    public void addTrackToOfflinePlaylist(String userId , String playlistIdToAddTrackTo, String uris) {
 
             URL url = null;
             try {
 //                POST https://api.spotify.com/v1/users/{user_id}/playlists/{playlist_id}/tracks
 
-                url = new URL("CHANGE THIS URL");
+                url = new URL("https://api.spotify.com/v1/users/" + userId +"/playlists/" + playlistIdToAddTrackTo + "/tracks?uris=" + uris);
+                System.out.println("adding track to offline playlist " + url.toString());
                 HttpURLConnection connection;
                 System.out.println("url is :" + url);
                 connection = (HttpURLConnection) url.openConnection();
@@ -163,6 +162,9 @@ public class PlaylistService {
                 connection.setRequestProperty("Content-Type", "application/json");
                 connection.setRequestProperty("Authorization", "Bearer " + AuthService.accessToken.getAccessToken());
                 connection.connect();
+
+                System.out.println(connection.getResponseCode());
+                System.out.println(connection.getResponseMessage());
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (ProtocolException e) {
