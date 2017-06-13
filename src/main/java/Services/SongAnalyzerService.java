@@ -5,8 +5,10 @@ import fullModel.AnalyzerCounter;
 import fullModel.Tests.Genres;
 import fullModel.Track;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 /**
  * Created by tiagoRodrigues on 26/04/2017.
@@ -41,18 +43,18 @@ public class SongAnalyzerService {
 
     public boolean liveTrack(Track track) {
 
-        /**
-         * todo
-         * Can't have spaces. " LIVE " != "Live "
-         * */
+        boolean liveTrack = false;
 
-        if (track.getName().contains(" live ") || track.getName().contains("Live ") || track.getName().contains(" Ao Vivo ")
-                || track.getName().contains(" En Vivo ")) {
-            return true;
-        }
+        System.out.println("Track name is : " + track.getName());
 
-        return false;
+        if (track.getName().matches("(?i)(.*)- live(.*)") ||
+                track.getName().matches("(?i)(.*)live from(.*)") ||
+                track.getName().matches("(?i)(.*)live in(.*)") ||
+                track.getName().matches("(?i)(.*)[(]live[)](.*)") ||
+                track.getName().matches("(?i)(.*)live at(.*)") ||
+                track.getName().matches("(?i)(.*)ao vivo(.*)")) liveTrack = true;
 
+        return liveTrack;
     }
 
     public Genres genreSorter(Track track) {
@@ -61,6 +63,16 @@ public class SongAnalyzerService {
         * todo: if genres are empty or no match return unspecified
         * todo: what happens if two genres have the same counter (tie) ?
         * */
+
+        //Country specific genres
+        if (track.getArtists()[0].printGenres().matches("(?i)(.*)portuguese(.*)")) {
+            System.out.println("Returning Portuguese in country analyzer");
+            return Genres.PORTUGUESE;
+        } else if (track.getArtists()[0].printGenres().matches("(?i)(.*)german(.*)")) {
+            return Genres.GERMAN;
+        }
+
+        if (track.getName().matches("(?i)(.*)acoustic(.*)")) return Genres.ACOUSTIC;
 
 
         /*
@@ -93,7 +105,7 @@ public class SongAnalyzerService {
         * check if genres are empty
         * */
 
-        if (track.getArtists()[0].getGenres() == null){
+        if (track.getArtists()[0].getGenres() == null) {
 
             return Genres.UNSPECIFIED;
         }
@@ -164,7 +176,7 @@ public class SongAnalyzerService {
 
             return Genres.HIPHOP;
 
-        } else if (maxValueCounter.getGenreName().equals("NoGenre")){
+        } else if (maxValueCounter.getGenreName().equals("NoGenre")) {
 
             return Genres.UNSPECIFIED;
         }

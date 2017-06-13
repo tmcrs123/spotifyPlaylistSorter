@@ -17,7 +17,10 @@ public enum Genres {
     JAZZ ("Jazz"),
     BLUES ("Blues"),
     BOSSA_NOVA ("Bossa_Nova"),
-    UNSPECIFIED ("Unspecified");
+    UNSPECIFIED ("Unspecified"),
+    ACOUSTIC ("Acoustic"),
+    SOUNDTRACK("Soundtrack"),
+    REGGAE("Reggae");
 
 
     private final String genre;
