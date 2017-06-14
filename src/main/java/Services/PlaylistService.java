@@ -26,6 +26,7 @@ public class PlaylistService {
 
     static HashMap<String, Playlist> playlistHashMap = new HashMap<>();
     HashMap<Genres, ArrayList<String>> tempSongContainer = new HashMap<>();
+    ArrayList<Integer> selectedRandomTrackIndex = new ArrayList<>();
 
 
     public HashMap<String, Playlist> getPlaylists(String userId) throws IOException {
@@ -216,7 +217,13 @@ public class PlaylistService {
         System.out.println("playlist id is " + playlist.getId());
         System.out.println("playlist has " + playlist.getTracks().getTotal() + " tracks");
         System.out.println("playlists owner is " + playlist.getOwner().getId());
+
         int randomTrackIndex = ((int)Math.floor(Math.random()*playlist.getTracks().getTotal()));
+
+        while (selectedRandomTrackIndex.contains(randomTrackIndex)){
+            randomTrackIndex = ((int)Math.floor(Math.random()*playlist.getTracks().getTotal()));
+        }
+
         System.out.println("picking up song number " + randomTrackIndex);
 
         String  playlistOwner;

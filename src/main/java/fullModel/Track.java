@@ -28,6 +28,10 @@ public class Track {
         return artists;
     }
 
+    public Artist getFirstArtist(){
+        return artists[0];
+    }
+
     public void setArtists(Artist[] artists) {
         this.artists = artists;
     }

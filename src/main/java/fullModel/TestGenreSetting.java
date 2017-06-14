@@ -41,7 +41,7 @@ public class TestGenreSetting {
         playlistHashMap = playlistService.getPlaylists(userService.getUser().getId());
 
         Artist artist = new Artist();
-        artist.setId("3GBPw9NK25X1Wt2OUvOwY3");
+        artist.setId("0HlxL5hisLf59ETEPM3cUA");
 
         Artist[] artistArrays = new Artist[1];
 

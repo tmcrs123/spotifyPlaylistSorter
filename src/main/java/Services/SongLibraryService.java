@@ -15,6 +15,20 @@ import java.net.URL;
  */
 public class SongLibraryService {
 
+    /*
+    * This is the class that connects to spotify to get the songLibrary (Your music -> songs) for a given user
+    *
+    * The reason why the getSongSet requires a dynamic requestUrl is because you don't get all your songs in
+    * one go. You get a set of 20 songs at a time...and the URL for the next set of songs.
+    *
+    * So my idea here is to have only reference to a SongLibrary at the time. I don't need to keep
+    * the past set of songs (aka some sort of container of SongLibrary's).
+    *
+    * Therefore, each time I get another set of songs, I'm pointing to the same SongLibrary var
+    * and letting the garbage collector deal with the unused references
+    *
+    * */
+
     public SongLibrary songLibrary;
     public HttpURLConnection connection = null;
 
@@ -39,13 +53,8 @@ public class SongLibraryService {
             response.append(inputLine);
         }
 
-        System.out.println(response.toString()+"\n");
-
-
         ObjectMapper objectMapper = new ObjectMapper();
         songLibrary = objectMapper.readValue(response.toString(), SongLibrary.class);
-
-//        System.out.println("Reference to song Library is " + songLibrary.toString());
 
     }
 }

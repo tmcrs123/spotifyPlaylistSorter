@@ -16,6 +16,12 @@ import java.net.URL;
  */
 public class ArtistService {
 
+    /*
+    * The goal of this class is simply to the the genres for a given artist from spotify.
+    * I'm using a tempArtist when executing the getGenresforArtist method as a placeholder
+    * variable to populate the artist I'm passing as an argument
+    * */
+
 
     public void getGenresforArtist(Artist artist) throws IOException {
 
@@ -48,7 +54,6 @@ public class ArtistService {
         System.out.println(tempArtist.getName());
 
         artist.setGenres(tempArtist.getGenres());
-
 
         artist.printGenres();
 

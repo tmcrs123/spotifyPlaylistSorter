@@ -15,6 +15,37 @@ import java.util.regex.Pattern;
  */
 public class SongAnalyzerService {
 
+    /*
+    * The goal of this class is to define the genre of a track.
+    *
+    * The way I'm doing this is by defining the genre of the track as the most
+    * frequent genre for an artist that matches wity my spotify playlists.
+    *
+    * For example Nina Simone has the following genres:
+    * [ "adult standards", "christmas", "jazz blues", "jazz christmas", "soul", "soul jazz", "vocal jazz"]
+    *
+    * I have two playlist that match the genre Nina Simone has: Blues and Jazz
+    *
+    * So what I'm doing is counting the amount of times the strings "Blues" and "Jazz" show up in the array of genres.
+    *
+    * Since Jazz = 4 and Blues = 1, every song by Nina Simone will have its genre set to Jazz
+    *
+    * Advantages of this method: it's easy to do!
+    *
+    * Disadvantages: since I'm not actually dealing with the parameters of the track (danceability, loudness, tempo,etc)
+    * I will not get the definition of all songs 100% accurate.
+    *
+    * For example, although Metallica is Metal, I wouldn't consider Nothing Else Matters a metal song.
+    *
+    * I'm given the following order of importance to a track (from most important to less important)
+    *
+    * 1 - Live track -> if a track is live, then it should go to Live playlists, regardless of the genre
+    * 2 - Country Specific -> If the track is country specific, then it should go to a playlist of that country
+    * (For example, any portuguese song should go to the Portuguese playlists, regardless of the genre)
+    * 3 - Acoustic tracks -> if the name of the track contains the word "Acoustic", it should go to the Acoustic playlist
+    * 4-  Genre playlist -> as explained above
+    * */
+
     public Genres trackGenreAnalyzer(Track track) {
 
         System.out.println("\n" + "------ GENRE ANALYZER-----");
@@ -83,7 +114,7 @@ public class SongAnalyzerService {
         AnalyzerCounter maxValueCounter = new AnalyzerCounter("NoGenre");
 
         /*
-        * First step is to get tha names of the playlists because I need to define the counters
+        * First step is to get the names of my spotify playlists because I need to define the counters
         * */
 
         Set<String> playlistNames = PlaylistService.playlistHashMap.keySet();
@@ -99,30 +130,22 @@ public class SongAnalyzerService {
 
         }
 
-        //assuming that if the track has more than 1 artist, the first one is the one that defines the genre
-
         /*
-        * check if genres are empty
+        * check if genres are empty, then set the genre of the song as unspecified
+        * the goal is to minimize the number of unspecified songs
         * */
 
-        if (track.getArtists()[0].getGenres() == null) {
+        if (track.getFirstArtist().getGenres() == null) {
 
             return Genres.UNSPECIFIED;
         }
 
-        String[] mainArtistGenres = track.getArtists()[0].getGenres();
+        String[] mainArtistGenres = track.getFirstArtist().getGenres();
 
         /*
         * Next, I check if the genres for a given artist match any
         * of the counters I've defined.
         * If it matches then ++ the counter
-        * */
-
-        /*
-        * REMARK:
-        *
-        * this won't conflic with spotify playlists because they are Camel Cased
-        * And also you can't add songs to them
         * */
 
         for (String genre : mainArtistGenres) {
@@ -158,30 +181,19 @@ public class SongAnalyzerService {
 
         System.out.println("returning genre : " + maxValueCounter.getGenreName());
 
-
-        /*
-        * This returs n genre bue I need to pass a string that identifies it exactly as it is declared
-        * */
-
-
         /*
         * If the genre is hip hop I need to return it differently because of spaces in enum
         * */
 
-        //regex here %hip hop% ?
-
         if (maxValueCounter.getGenreName().equals("Hip Hop")) {
-
-            System.out.println("Got here");
 
             return Genres.HIPHOP;
 
-        } else if (maxValueCounter.getGenreName().equals("NoGenre")) {
-
-            return Genres.UNSPECIFIED;
         }
 
-
+        /*
+        * Otherwise return the genre defined in the maxValueCounter
+        * */
         return Genres.valueOf(Genres.class, maxValueCounter.getGenreName().toUpperCase());
 
     }

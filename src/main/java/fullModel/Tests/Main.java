@@ -35,6 +35,7 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
 
+        //Services Instantiion
         AuthService authService = new AuthService();
         UserService userService = new UserService();
         SongLibraryService songLibraryService = new SongLibraryService();
@@ -42,18 +43,16 @@ public class Main {
         SongAnalyzerService songAnalyzerService = new SongAnalyzerService();
         ArtistService artistService = new ArtistService();
 
-        String firstRequestURL = "https://api.spotify.com/v1/me/tracks";
-
-
-        HashMap<String, Playlist> playlistHashMap;
 
         //Helpers
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         Date lastRunDate = df.parse("2017-05-29");
         boolean noMoreSongsToAdd = false;
+        HashMap<String, Playlist> playlistHashMap;
+        String firstRequestURL = "https://api.spotify.com/v1/me/tracks";
 
-
-        //todo: pode haver aqui um check para ver se a data é válida
+        //constants
+        String UserId = userService.getUser().getId();
 
 
         try {
@@ -72,7 +71,7 @@ public class Main {
             /*
             * Get the playlist Mapping and save it in a hashmap
             * */
-            playlistHashMap = playlistService.getPlaylists(userService.getUser().getId());
+            playlistHashMap = playlistService.getPlaylists(UserId);
 
 
 
@@ -84,30 +83,24 @@ public class Main {
             songLibraryService.getSongSet(firstRequestURL);
 
 
+        do{
+
+            /*
+            * Define a songLibrary variable, that holds the current set of songs
+            * This contents of this variable will be replaced when getting the next set of songs
+            * */
+            SongLibrary curSongSet = songLibraryService.songLibrary;
 
 
             /*
-            * start doing stuff until there aren't no more references to the next song set
+            * Define an array of items. This array is what holds the track and the date
+            * that track was added. In my model Item = Track + Added_At
             * */
-//            while (songLibraryService.songLibrary.getNext() != null && counter != songLibraryService.songLibrary.total) {
+            Item[] curItemSet = curSongSet.getItems();
 
-        do{
-
-//            if (songLibraryService.songLibrary.getNext() == null){
-//                System.out.println("All songs processed");
-//                return;
-//            }
-
-                SongLibrary curSongSet = songLibraryService.songLibrary;
-
-
-                Item[] curItemSet = curSongSet.getItems();
-
-
-                List<Track> tracks = new ArrayList<>();
 
                 /*
-                * For each track in the array of items, do stuff
+                * Now lets process each track in the Item array
                 * */
 
                 for (Item item : curItemSet) {
@@ -123,15 +116,15 @@ public class Main {
                     Track curTrack = item.getTrack();
 
 
-//                    try {
-//                        //get the date the track was added from the item
-//                        Date curTrackAddedDate = parseDate(item.getAdded_at());
-//                    } catch (ParseException e) {
-//                        e.printStackTrace();
-//                    }
-
                     //get the FIRST artist for the current track
-                    Artist curArtist = item.getTrack().getArtists()[0];
+
+                    /*
+                    * A track has an array of artist because some tracks have
+                    * more than one artist. For example Pentatonix ft. Lindsey Stirling - Radioactive
+                    * is a track with more than 1 artist. I'm always getting the first artist,
+                    * because i'm considering that it is the most important for a given track.
+                    * */
+                    Artist curArtist = item.getTrack().getFirstArtist();
 
                     //get the genres for that artist
                     artistService.getGenresforArtist(curArtist);
@@ -148,9 +141,7 @@ public class Main {
                     * Now set the reference of songLibrary to the next song library set
                     * */
                 }
-/*
-* Can I run this method in the end when all tracks have a defined genre???
-* */
+
 
                 playlistService.addTrackToPlaylist(userService.getUser().getId(), playlistService.getPlaylists(userService.getUser().getId()));
 
