@@ -32,7 +32,7 @@ public class SongSorter {
         /*
         * change this date if you just want to work with songs from a given data onwards
         * */
-        Date lastRunDate = df.parse("2017-06-15");
+        Date lastRunDate = df.parse("2018-01-24");
 
         boolean noMoreSongsToAdd = false;
         HashMap<String, Playlist> playlistHashMap;

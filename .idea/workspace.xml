@@ -2,56 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6f90893-84bf-49c9-8926-23f899f3abf1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/PlaylistLibrary.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Services/ArtistService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Services/AuthService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Services/PlaylistService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Services/SongAnalyzerService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Services/SongLibraryService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Services/UserService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/Album.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/AnalyzerCounter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/Artist.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/Item.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/Playlist.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/PlaylistLibrary.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/SongLibrary.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/Spotify20ServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/SpotifyApi20$InstanceHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/SpotifyApi20.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/TestGenreSetting.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/Tests/Genres.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/Tests/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/Tests/TempPlaylistBuilder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/Track.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/auxModels/Owner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/auxModels/SingleTrack.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/fullModel/auxModels/Tracks.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Services/ArtistService.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/ArtistService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Services/AuthService.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Services/PlaylistService.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/PlaylistService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Services/SongAnalyzerService.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/SongAnalyzerService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Services/SongLibraryService.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/SongLibraryService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Services/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/UserService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/Album.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Album.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/AnalyzerCounter.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/auxModels/AnalyzerCounter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/Artist.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Artist.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/Item.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Item.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/Playlist.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Playlist.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/SongLibrary.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/SongLibrary.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/Spotify20ServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/SpotifyApiOAuth/Spotify20ServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/SpotifyApi20.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/SpotifyApiOAuth/SpotifyApi20.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/TestGenreSetting.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Testing/TestGenreSetting.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/Tests/Genres.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Genres.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/Tests/Main.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/Tests/TempPlaylistBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/OfflinePlaylistBuilder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/Track.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Track.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/User.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/User.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/auxModels/Owner.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/auxModels/Owner.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/auxModels/SingleTrack.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/auxModels/SingleTrack.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/fullModel/auxModels/Tracks.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/auxModels/Tracks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/SpotifySongToPlaylistSorter/Runnables/SongSorter.class" afterPath="$PROJECT_DIR$/target/classes/SpotifySongToPlaylistSorter/Runnables/SongSorter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/SpotifySongToPlaylistSorter/Services/AuthService.class" afterPath="$PROJECT_DIR$/target/classes/SpotifySongToPlaylistSorter/Services/AuthService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -84,24 +39,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OfflinePlaylistBuilder.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/OfflinePlaylistBuilder.java">
+      <file leaf-file-name="PlaylistService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/PlaylistService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1080">
-              <caret line="80" column="28" lean-forward="false" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+              <folding>
+                <element signature="e#10825#10826#0" expanded="true" />
+                <element signature="e#10877#10878#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SongSorter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="810">
+              <caret line="63" column="32" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlaylistService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/PlaylistService.java">
+      <file leaf-file-name="Keys.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Keys.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1118">
-              <caret line="279" column="49" lean-forward="false" selection-start-line="279" selection-start-column="49" selection-end-line="279" selection-end-column="49" />
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SongLibraryService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/SongLibraryService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="41" column="108" lean-forward="false" selection-start-line="41" selection-start-column="108" selection-end-line="41" selection-end-column="108" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
               <folding>
-                <element signature="e#10877#10878#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,6 +128,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>tempSongContainer</find>
+      <find>me/tracks</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,9 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/SongLibrary.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Track.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Likes.java" />
         <option value="$PROJECT_DIR$/src/main/java/User2.java" />
         <option value="$PROJECT_DIR$/src/main/java/Girls.java" />
         <option value="$PROJECT_DIR$/src/main/java/Sports.java" />
@@ -183,13 +189,16 @@
         <option value="$PROJECT_DIR$/src/main/java/fullModel/Testing/TestGenreSetting.java" />
         <option value="$PROJECT_DIR$/src/main/java/fullModel/SpotifyApiOAuth/SpotifyApi20.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/SpotifyApiOAuth/SpotifyApi20.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Genres.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/auxModels/AnalyzerCounter.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/SongAnalyzerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Testing/TestGenreSetting.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/PlaylistService.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/OfflinePlaylistBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Keys.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -256,22 +265,8 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spotifyAPITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spotifyAPITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -290,18 +285,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpotifySongToPlaylistSorter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Testing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,134 +311,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SpotifySongToPlaylistSorter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spotifyAPITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spotifyAPITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpotifySongToPlaylistSorter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spotifyAPITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spotifyAPITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpotifySongToPlaylistSorter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Runnables" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spotifyAPITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spotifyAPITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpotifySongToPlaylistSorter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spotifyAPITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spotifyAPITest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpotifySongToPlaylistSorter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auxModels" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,12 +328,12 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="FullScreen" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="FullScreen" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SongSorter">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -945,9 +808,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.OfflinePlaylistBuilder" />
-        <item index="1" class="java.lang.String" itemvalue="Application.TestGenreSetting" />
-        <item index="2" class="java.lang.String" itemvalue="Application.SongSorter" />
+        <item index="0" class="java.lang.String" itemvalue="Application.SongSorter" />
+        <item index="1" class="java.lang.String" itemvalue="Application.OfflinePlaylistBuilder" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TestGenreSetting" />
         <item index="3" class="java.lang.String" itemvalue="Application.JacksonTester" />
         <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       </list>
@@ -994,12 +857,13 @@
       <workItem from="1496427378205" duration="3195000" />
       <workItem from="1496697352239" duration="18311000" />
       <workItem from="1496871235525" duration="5473000" />
-      <workItem from="1496991133395" duration="37509000" />
+      <workItem from="1496991133395" duration="37773000" />
+      <workItem from="1516921327895" duration="3909000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209660000" />
+    <option name="totallyTimeSpent" value="213833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1012,7 +876,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1023,27 +887,27 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34246576" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34246576" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34657535" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2849315" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27625203" sideWeight="0.49166667" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28029078" sideWeight="0.49166667" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26817447" sideWeight="0.5083333" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33561644" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26817447" sideWeight="0.5083333" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1073,8 +937,14 @@
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1095,8 +965,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Sports.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Girls.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/CustomParser/Track.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/JacksonTester.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/CustomParser/CustomDeserializer.java" />
@@ -1123,14 +991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="49" column="6" lean-forward="false" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="73" column="13" lean-forward="false" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1183,13 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar!/sun/net/www/protocol/http/HttpURLConnection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="1040" column="0" lean-forward="false" selection-start-line="1040" selection-start-column="0" selection-end-line="1040" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar!/sun/net/www/protocol/https/HttpsURLConnectionImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1215,17 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/auxModels/Tracks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#272#273#0" expanded="false" />
-            <element signature="e#300#301#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1271,14 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/SongLibraryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="18" column="110" lean-forward="false" selection-start-line="18" selection-start-column="110" selection-end-line="18" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Album.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1303,22 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="54" column="49" lean-forward="false" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/SpotifyApiOAuth/SpotifyApi20.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/PlaylistLibrary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1338,46 +1156,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Track.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Playlist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/SpotifyApiOAuth/Spotify20ServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#511#512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#1377#1378#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1387,11 +1171,11 @@
         <state relative-caret-position="293">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="false" />
+            <element signature="e#520#521#0" expanded="false" />
+            <element signature="e#558#559#0" expanded="false" />
+            <element signature="e#583#584#0" expanded="false" />
+            <element signature="e#633#634#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1401,16 +1185,6 @@
         <state relative-caret-position="240">
           <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-          <folding>
-            <marker date="1497559895000" expanded="true" signature="2806:3057" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1430,20 +1204,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/PlaylistService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/SpotifyApiOAuth/SpotifyApi20.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1118">
-          <caret line="279" column="49" lean-forward="false" selection-start-line="279" selection-start-column="49" selection-end-line="279" selection-end-column="49" />
-          <folding>
-            <element signature="e#10877#10878#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/SpotifyApiOAuth/Spotify20ServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Track.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Models/Playlist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="73" column="13" lean-forward="false" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/OfflinePlaylistBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
+        <state relative-caret-position="795">
           <caret line="80" column="28" lean-forward="false" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar!/sun/net/www/protocol/http/HttpURLConnection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="1350" column="0" lean-forward="false" selection-start-line="1350" selection-start-column="0" selection-end-line="1350" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="63" column="32" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/SongLibraryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="41" column="108" lean-forward="false" selection-start-line="41" selection-start-column="108" selection-end-line="41" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/auxModels/Tracks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/PlaylistService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="e#10825#10826#0" expanded="true" />
+            <element signature="e#10877#10878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Keys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
           <folding />
         </state>
       </provider>

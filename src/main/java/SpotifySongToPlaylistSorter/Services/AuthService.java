@@ -1,5 +1,6 @@
 package SpotifySongToPlaylistSorter.Services;
 
+import SpotifySongToPlaylistSorter.Keys;
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.github.scribejava.core.oauth.OAuth20Service;
@@ -14,8 +15,10 @@ import java.util.concurrent.ExecutionException;
  */
 public class AuthService {
 
-    final String clientId = "fd2300e87f114d69a48e2d013e942a4f";
-    final String clientSecret = "d66504db87a144b7bfa4e1959c2fe7f6";
+    Keys keys = new Keys();
+
+    final String clientId = Keys.oauthKey;
+    final String clientSecret = Keys.secret;
     static OAuth2AccessToken accessToken;
 
     public void doAuthentication() throws InterruptedException, ExecutionException, IOException {
@@ -23,7 +26,7 @@ public class AuthService {
 
         final OAuth20Service service = new ServiceBuilder()
                 .apiKey(clientId).apiSecret(clientSecret)
-                .scope("user-read-private playlist-read-private playlist-modify-private playlist-modify-public") // replace with desired scope
+                .scope("user-read-private playlist-read-private playlist-modify-private playlist-modify-public user-library-read") // replace with desired scope
                 .callback("http://localhost:8080/")
                 .build(SpotifyApi20.instance());
         final Scanner in = new Scanner(System.in);
@@ -53,7 +56,8 @@ public class AuthService {
 //        System.out.println("Trading the Request Token for an Access Token...");
         accessToken = service.getAccessToken(code);
         System.out.println("Got the Access Token!\n");
-//System.out.println("(if your curious it looks like this: " + accessToken + ", 'rawResponse'='" + accessToken.getRawResponse() + "')");
+        System.out.println("acces token" + accessToken.getAccessToken());
+        System.out.println("(if your curious it looks like this: " + accessToken + ", 'rawResponse'='" + accessToken.getRawResponse() + "')");
 
     }
 }
