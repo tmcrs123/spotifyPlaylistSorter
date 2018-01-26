@@ -1,5 +1,6 @@
 package SpotifySongToPlaylistSorter.Services;
 
+
 import SpotifySongToPlaylistSorter.Keys;
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.OAuth2AccessToken;
@@ -15,7 +16,6 @@ import java.util.concurrent.ExecutionException;
  */
 public class AuthService {
 
-    Keys keys = new Keys();
 
     final String clientId = Keys.oauthKey;
     final String clientSecret = Keys.secret;
