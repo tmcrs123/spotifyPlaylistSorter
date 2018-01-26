@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6f90893-84bf-49c9-8926-23f899f3abf1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/SpotifySongToPlaylistSorter/Runnables/SongSorter.class" afterPath="$PROJECT_DIR$/target/classes/SpotifySongToPlaylistSorter/Runnables/SongSorter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/SpotifySongToPlaylistSorter/Services/AuthService.class" afterPath="$PROJECT_DIR$/target/classes/SpotifySongToPlaylistSorter/Services/AuthService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -107,8 +104,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+            <state relative-caret-position="345">
+              <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -858,12 +855,12 @@
       <workItem from="1496697352239" duration="18311000" />
       <workItem from="1496871235525" duration="5473000" />
       <workItem from="1496991133395" duration="37773000" />
-      <workItem from="1516921327895" duration="3909000" />
+      <workItem from="1516921327895" duration="4098000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213833000" />
+    <option name="totallyTimeSpent" value="214022000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1323,8 +1320,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+        <state relative-caret-position="345">
+          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           <folding />
         </state>
       </provider>
