@@ -4,7 +4,6 @@
     <list default="true" id="d6f90893-84bf-49c9-8926-23f899f3abf1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java" afterPath="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -106,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+              <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -193,10 +192,10 @@
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/PlaylistService.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/OfflinePlaylistBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Runnables/SongSorter.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/Keys.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Keys.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpotifySongToPlaylistSorter/Services/AuthService.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -856,12 +855,12 @@
       <workItem from="1496697352239" duration="18311000" />
       <workItem from="1496871235525" duration="5473000" />
       <workItem from="1496991133395" duration="37773000" />
-      <workItem from="1516921327895" duration="4601000" />
+      <workItem from="1516921327895" duration="5203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214525000" />
+    <option name="totallyTimeSpent" value="215127000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1329,7 +1328,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding />
         </state>
       </provider>
